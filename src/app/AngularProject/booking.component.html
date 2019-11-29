@@ -1,0 +1,134 @@
+<div class="container">
+    <!-- {{bookingInfo|json}} -->
+<!-- <form [formGroup]="BC">  -->
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <!-- <div class="card"> -->
+          <div class="button_lg">
+          <button type="submit" style="margin-left: 120px;" class="btn btn-info btn-lg" (click)="GetbookingInfo()">View All Nearest Bookings</button>
+        </div>
+          <!-- My JSOn {{bookingInfo|json}} -->
+        <table class="table table-striped">
+            <thead>
+                <tr *ngIf="bookingInfo">
+                  <th>Id</th>
+                  <th>Car type</th>
+                  <th>Service Type</th>
+                  <th>Budget</th>
+                  <th>Order</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of bookingInfo">
+                <td>{{s.Nearest_Booking_Id}}</td>
+                <td>{{s.CarType}}</td>
+                <td>{{s.ServiceType}}</td>
+                <td>{{s.Budget}}</td>
+                <td>
+                  <button type="submit" class="btn btn-info" href="maintenance" (click)="GetMaintbookingInfo(s.Nearest_Booking_Id)">Get Order</button>
+                      </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="col-md-3"></div>
+</div>
+
+</div>
+
+
+
+<!-- <form [formGroup]="BC1">
+<div class="row">
+  <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <table class="table table-bordered table-sm">
+            <thead>
+              <tr>
+                <th>Contact Name</th>
+                <tbody>
+                  <td *ngFor="let s of MaintInfoById">{{s.ContactName}}</td>
+                </tbody>
+              </tr>
+              <tr>
+                <th>Vehicle Details</th>
+                <td *ngFor="let s of MaintInfoById">{{s.VehicleDetails}}</td>
+              </tr>
+              <tr>
+                <th>Contact Details</th>
+                <td *ngFor="let s of MaintInfoById">{{s.ContactDetails}}</td>
+              </tr>
+              <tr>
+                <th>Service Type</th>
+                <td *ngFor="let s of MaintInfoById">{{s.ServiceType}}</td>
+              </tr>
+              <tr>
+                <th>Pick-up Location</th>
+                <td *ngFor="let s of MaintInfoById">{{s.PickUpLocation}}</td>
+              </tr>
+              <tr>
+                <th>Pick-up Date</th>
+                <td *ngFor="let s of MaintInfoById">{{s.PickUpDate}}</td>
+              </tr>
+              <tr>
+                <th>Budget</th>
+                <td *ngFor="let s of MaintInfoById">{{s.Budget}}</td>
+              </tr>
+              <tr>
+                <th>Service Description</th>
+                <td *ngFor="let s of MaintInfoById">{{s.ServiceDescription}}</td>
+              </tr>
+            </thead>
+            
+        
+          </table>
+          <input type="text" formControlName="Booking_Id">
+          <button type="submit" class="btn btn-info" (click)="GetbookingManitInfo(BC1.value)" value="submit" >Get Order</button>
+
+     </div>
+    <div class="col-sm-3"></div>
+  </div>
+</form> -->
+
+
+<!-- <form [formGroup]="BCM">
+<div class="col-md-6">
+  <h1 style="text-align: center;"><b><u>All Records</u></b></h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Booking_Id</th>
+        <th>Contact</th>
+        <th>VehicleDetails</th>
+        <th>ContactDetails</th>
+        <th>ServiceType</th>
+        <th>PickUpLocation</th>
+        <th>PickUpDate</th>
+        <th>Budget</th>
+        <th>ServiceDescription</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of MaintInfoById">
+        <td>{{s.Booking_Id}}</td>
+        <td>{{s.Contact}}</td>
+        <td>{{s.VehicleDetails}}</td>
+        <td>{{s.ContactDetails}}</td>
+        <td>{{s.ServiceType}}</td>
+        <td>{{s.PickUpLocation}}</td>
+        <td>{{s.PickUpDate}}</td>
+        <td>{{s.Budget}}</td>
+        <td>{{s.ServiceDescription}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="number" class="form-control" placeholder="Serach by Id" formControlName="Booking_Id">
+  <button type="submit" class="btn btn-info" (click)="GetbookingManitInfo()">Get All Sign-Up Records</button>
+</div>
+</form> -->
+
+
+
